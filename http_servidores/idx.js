@@ -1,11 +1,22 @@
 const http = require("http");
 const fs = require('fs');
 
-const html = fs.readFileSync('./index.html'); 
+const inicio = fs.readFileSync('./index.html'); 
+const about = fs.readFileSync('./about.html');
 
 http.createServer((request, response)=>{
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(html);
+    const {url} = request;
+    if(url === '/'){
+        response.writeHead(200, {"Content-Type": "text/html"});
+        response.write(inicio);
+    }else if(url === '/about'){
+        response.writeHead(200, {"Content-Type": "text/html"});
+        response.write(about);
+    }else{
+        response.writeHead(404, {"Content-Type": "text/html"});
+        response.write("Page Not Found!");
+    }
+    
     response.end();  
 })
 .listen('8080');

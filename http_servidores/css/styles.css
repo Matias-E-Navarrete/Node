@@ -1,0 +1,41 @@
+:root {
+    --amarillo: #E7FF3C;
+    --fondo: #FAFAFA;
+    --verde: #13B600;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+header {
+    padding: 30px 0;
+    
+}
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logoTipo {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: var(--amarillo);
+}
+header nav a {
+    color: var(--verde);
+    text-decoration: none;
+    margin-right: 20px;
+}
+header nav a:hover {
+    color: var(--amarillo);
+}
